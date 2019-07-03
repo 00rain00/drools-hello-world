@@ -37,11 +37,16 @@ public class DroolsTest {
 		WorkingMemory workingMemory = ruleBase.newStatefulSession();
 
 		Character zen = new Character();
-		zen.setHp(99);
+		zen.setHp(70);
+		zen.setSp(100);
 
 		workingMemory.insert(zen);
 		workingMemory.fireAllRules();
 
+		zen.setHp(10);
+		zen.setSp(10);
+		workingMemory.insert(zen);
+		workingMemory.fireAllRules();
 
 	}
 
